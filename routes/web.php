@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'pageController@fourTwoA');
 
 Route::get('/42A', 'pageController@forthSecondA');
 Route::get('/42B', 'pageCOntroller@forthSecondB');
@@ -45,3 +43,20 @@ Route::get('/12/B', 'pageController@oneTwoB');
 Route::get('/11/A', 'pageController@oneOneA');
 Route::get('/11/B', 'pageController@oneOneB');
 Route::get('/11/C', 'pageController@oneOneC');
+
+//-------------- ClassRoom Route starts from here ------------------//
+
+Route::get('theoryRoom/{roomNo}', 'theoryRoomController@theoryRoomFuntion');
+Route::get('labRoom/{roomNo}', 'theoryRoomController@labRoomFuntion');
+
+//-------------- ClassRoom Route Ends here ------------------//
+
+//-------------- Teacher Route Starts from here --------------//
+
+Route::get('/{teacherID}', 'teacherController@index');
+
+//-------------- Teacher Route Ends here --------------//
+
+//-------------- Calculate Total Time -----------------//
+
+Route::get('/objectives/totalTime', 'pageController@totalTime');
